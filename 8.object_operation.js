@@ -43,7 +43,54 @@ let person2 = {
 
 // console.log(person2.address.street.roadNumber);
 console.log(person2?.address?.street?.roadNumber); // optioanl chaning
-console.log("Hello")
+// console.log("Hello")
+
+// Object.keys, object.value
+
+let keys = Object.keys(person);
+let values=  Object.values(person);
+let entries=  Object.entries(person);
+
+// console.log(keys);
+// console.log(values);
+// console.log(entries);
+
+// for in an array method after Object.keys
+// for(let property in person){
+//     console.log(property, "->", person[property]);
+// }
+
+// for(let key of keys){
+//     console.log(person[key])
+// }
+
+
+// freeze, seal, delete
+let car = {
+    brand: "Toyota",
+    color: "Black",
+    model: "ABC"
+}
+
+// delete car color
+//  delete car.color;
+
+// freeze
+// Object.freeze(car); // precent insert, delete , update
+// car.color = "white";
+// delete car.brand;
+// car.engine = "Test"
+
+Object.seal(car); // prevent insert , delete
+car.engine  ="Text";
+delete car.color;
+car.color = "red";
+
+ console.log(car);
+
+//  copy obj independently
+
+let car2 = {...car2}
 
 
 
